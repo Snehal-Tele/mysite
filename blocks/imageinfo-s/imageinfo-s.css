@@ -1,55 +1,49 @@
-.image-info-block {
+.imageinfo-s-block {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 40px 20px;
     font-family: 'Helvetica Neue', sans-serif;
 }
 
-.image-info-wrapper {
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto; /* Center the wrapper */
-    padding: 0 20px; /* Add margin at left and right */
-}
-
-.image-info-title {
+.imageinfo-s-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align:center;
-    color: #514f4f;
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Adjust as needed */
 }
 
-.image-info-img {
-    width: 50%;
+.imageinfo-s-img {
+    width: 100%;
     height: 400px;
     background-size: cover;
     background-position: center;
     margin-bottom: 20px;
     border-radius: 8px;
-    
-    
 }
 
-.image-info-text {
+.imageinfo-s-text {
     font-size: 1.1rem;
-    color: #7d7b7b;
+    color: #444;
     line-height: 1.6;
-    text-align:left;
+    text-align: left;
     margin-bottom: 20px;
-    font-family: "Raleway", sans-serif;
+    width: 100%;
 }
 
-.image-info-text p {
+.imageinfo-s-text p {
     margin-bottom: 16px;
 }
 
-.image-info-button {
+.imageinfo-s-button {
     margin-top: 20px;
 }
 
-.image-info-button button {
+.imageinfo-s-button button {
     padding: 12px 24px;
     font-size: 1rem;
     background-color: #000;
@@ -61,6 +55,6 @@
     transition: background 0.3s ease;
 }
 
-.image-info-button button:hover {
+.imageinfo-s-button button:hover {
     background-color: #333;
 }
