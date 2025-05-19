@@ -11,11 +11,8 @@ export default function decorate(block) {
             } else if (rowIndex === 1) {
                 if (colIndex === 0) {
                     col.classList.add('imageinfo-s-img');
-                    const img = col.querySelector('img');
-                    if (img) {
-                        col.style.backgroundImage = `url('${img.src}')`;
-                        img.remove(); // Remove the img element after setting background image
-                    }
+                    const img = col.querySelector('picture');
+                    img.classList.add("imagePicture");
                 } else if (colIndex === 1) {
                     col.classList.add('imageinfo-s-text');
                     if (!col.innerHTML.trim()) {
@@ -37,9 +34,5 @@ export default function decorate(block) {
     });
 
     // Ensure the image column is always visible
-    const imgColumn = rows[1].children[0];
-    if (imgColumn) {
-        imgColumn.style.display = 'block';
-        //imgColumn.style.visibility = 'visible'
-    }
+
 }
