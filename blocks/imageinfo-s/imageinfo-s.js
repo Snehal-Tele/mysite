@@ -18,14 +18,28 @@ export default function decorate(block) {
                     }
                 } else if (colIndex === 1) {
                     col.classList.add('imageinfo-s-text');
+                    if (!col.innerHTML.trim()) {
+                        col.style.display = 'none'; // Hide the column if it's empty
+                    }
                 }
             } else if (rowIndex === 2) {
                 col.classList.add('imageinfo-s-button');
                 const button = col.querySelector('button');
                 if (button) {
                     col.appendChild(button);
-                }
+                } /*else {
+                    const newButton = document.createElement('button');
+                    newButton.textContent = 'Learn More';
+                    col.appendChild(newButton);
+                }*/
             }
         });
     });
+
+    // Ensure the image column is always visible
+    const imgColumn = rows[1].children[0];
+    if (imgColumn) {
+        imgColumn.style.display = 'block';
+        //imgColumn.style.visibility = 'visible'
+    }
 }

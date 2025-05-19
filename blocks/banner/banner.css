@@ -2,15 +2,17 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: #faeaea;
     width:100%;
+    font-family: "Raleway", sans-serif;
 }
 
 /* Entire block background */
 .s-banner-block {
     background-color: #fff;
-    padding: 20px;
+    padding: 0px;
     width: 100%;
+    margin:0%;
     box-sizing: border-box;
     position: relative; /* Added for positioning */
 }
