@@ -17,24 +17,28 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #222;
+    text-align:center;
+    color: #514f4f;
 }
 
 .image-info-img {
-    width: 100%;
+    width: 50%;
     height: 400px;
     background-size: cover;
     background-position: center;
     margin-bottom: 20px;
     border-radius: 8px;
+    
+    
 }
 
 .image-info-text {
     font-size: 1.1rem;
-    color: #444;
+    color: #7d7b7b;
     line-height: 1.6;
-    text-align: left;
+    text-align:left;
     margin-bottom: 20px;
+    font-family: "Raleway", sans-serif;
 }
 
 .image-info-text p {
