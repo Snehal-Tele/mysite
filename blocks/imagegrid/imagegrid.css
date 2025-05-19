@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: center;
 }
  
 .image-container {
@@ -14,15 +15,17 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
+  
 }
  
 .text-overlay {
-  color: rgb(192, 27, 27);
-  font-family: "Times New Roman", serif;
+  color: rgb(66, 24, 149);
+  font-family: "Raleway", sans-serif;
   font-size: 1.8rem;
   text-align: center;
+  justify-content: center;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.4); /* Optional: improves readability */
+  background:#fff; /* Optional: improves readability */
   max-width: 80%;
 }

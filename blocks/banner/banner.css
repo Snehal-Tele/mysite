@@ -1,0 +1,55 @@
+/* Reset default margins and paddings */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    width:100%;
+}
+
+/* Entire block background */
+.s-banner-block {
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* Added for positioning */
+}
+
+/* Title section */
+.s-banner-title {
+    font-size: 64px;
+    font-weight: 100%;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    position: absolute; /* Added for overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it is above the image */
+    text-align: center; /* Center text */
+    margin: 0; /* Remove default margin */
+}
+
+/* Subtitle section */
+.s-banner-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 30px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    position: absolute; /* Added for overlay */
+    top: 60%; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it is above the image */
+    text-align: center; /* Center text */
+    margin: 0; /* Remove default margin */
+}
+
+/* Image section */
+.s-banner-image {
+    width: 100%;
+    border-radius: 8px;
+    /*position: relative;  Added for positioning */
+    z-index: 1; /* Ensure it is below the text */
+}
