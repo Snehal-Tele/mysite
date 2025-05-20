@@ -6,6 +6,12 @@ body {
     width:100%;
     font-family: "Raleway", sans-serif;
 }
+.banner-wrapper{
+    width: 100%;
+    
+}
+
+
 
 /* Entire block background */
 .s-banner-block {
