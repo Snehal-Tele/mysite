@@ -5,24 +5,40 @@
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
-    border-top: 1px solid #ccc;
+    opacity: 0.8; /* 80% opacity */
     z-index: 1000;
+    
   }
-   
+  
   .lower-nav-button {
     flex: 1;
     padding: 12px;
     text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #e0e0e0;
-    transition: background-color 0.3s ease;
-  }
+    margin: 4px;
    
+    border-radius: 2px;
+    cursor: pointer;
+    color: black;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-family: Raleway, sans-serif !important;
+    font-size: 15px !important;
+  }
+  
   .lower-nav-button:hover {
     background-color: #d0d0d0;
   }
-   
+  
   .lower-nav-button.active {
     background-color: #c0c0c0;
   }
+  
+  .lower-nav-button:focus,
+  .lower-nav-button:active {
+    outline: none;
+    background-color: #d0d0d0;
+    color: inherit;
+    box-shadow: none;
+  }
+  

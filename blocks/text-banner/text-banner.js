@@ -1,6 +1,6 @@
 export default function decorate(block) {
     block.classList.add('text-banner-block');
-
+   block.setAttribute('id','rsvp');
     const rows = Array.from(block.children);
 
     rows.forEach((row, rowIndex) => {
