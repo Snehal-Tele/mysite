@@ -1,0 +1,28 @@
+.lower-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+  }
+   
+  .lower-nav-button {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+  }
+   
+  .lower-nav-button:hover {
+    background-color: #d0d0d0;
+  }
+   
+  .lower-nav-button.active {
+    background-color: #c0c0c0;
+  }
