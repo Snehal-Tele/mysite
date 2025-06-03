@@ -10,7 +10,7 @@ export default function decorate(block) {
     track.className = 'image-carousel-track';
   
     images.forEach((img, index) => {
-      if (index === 1) img.classList.add('active'); // Set second image as default center
+      if (index === 1) img.classList.add('active'); // Default center
       track.appendChild(img);
     });
   
@@ -20,14 +20,23 @@ export default function decorate(block) {
     function updateActive(index) {
       const all = track.querySelectorAll('img');
       all.forEach(img => img.classList.remove('active'));
-      all[index].classList.add('active');
+      const activeImg = all[index];
+      activeImg.classList.add('active');
   
-      const offset = index * -120 + 120; // Adjust scroll offset
+      // Center the active image
+      const blockRect = block.getBoundingClientRect();
+      const trackRect = track.getBoundingClientRect();
+      const activeRect = activeImg.getBoundingClientRect();
+  
+      const offset = (blockRect.width / 2) - (activeRect.left + activeRect.width / 2 - trackRect.left);
       track.style.transform = `translateX(${offset}px)`;
     }
   
     track.querySelectorAll('img').forEach((img, i) => {
       img.addEventListener('click', () => updateActive(i));
     });
+  
+    // Initial centering
+    updateActive(1);
   }
   

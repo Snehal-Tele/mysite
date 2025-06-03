@@ -14,7 +14,7 @@
   }
   
   .image-carousel-track img {
-    width: 100px;
+    width: 150px;
     height: auto;
     opacity: 0.6;
     cursor: pointer;
@@ -23,7 +23,7 @@
   }
   
   .image-carousel-track img.active {
-    width: 200px;
+    width: 300px;
     opacity: 1;
     transform: scale(1.1);
     z-index: 1;
