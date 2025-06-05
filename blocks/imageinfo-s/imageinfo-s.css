@@ -33,18 +33,16 @@
 
 
 .imageinfo-s-text {
-    font-size: 1.1rem;
-    color: #737070;
-    line-height: 1.6;
-    padding-top: 35px;
-    text-align: left;
-    margin-bottom: 20px;
-    width: 90%;
     font-size: 15px;
     font-style: italic;
-    align-items: center;
-    padding-left: 20%;
-    padding-right: 10%;
+    color: #737070;
+    line-height: 1.6;
+    text-align: left;
+    margin: 0 auto 20px auto;
+    width: 60%;
+    padding: 0;
+    padding-top: 15px;
+    
 }
 
 .imageinfo-s-text p {
