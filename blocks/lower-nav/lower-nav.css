@@ -1,3 +1,7 @@
+.body{
+  width: 100%;
+  margin: 0 !important;
+}
 .lower-nav {
     position: fixed;
     bottom: 0;
