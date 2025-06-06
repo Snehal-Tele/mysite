@@ -17,7 +17,7 @@ export default function decorate(block) {
       if (!query) return;
  
       try {
-        const res = await fetch('https://main--mysite--saurabhdeshmukh65.aem.live/query-index.json');
+        const res = await fetch('https://main--mysite--snehal-tele.aem.live/query-index.json');
         const json = await res.json();
         const pages = json.data;
  
@@ -28,7 +28,7 @@ export default function decorate(block) {
         });
  
         if (match) {
-          const baseUrl = 'https://main--mysite--saurabhdeshmukh65.aem.live';
+          const baseUrl = 'https://main--mysite--snehal-tele.aem.live';
           window.location.href = `${baseUrl}${match.path}`;
         } else {
           alert('No matching page found.');
