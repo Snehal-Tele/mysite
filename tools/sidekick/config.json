@@ -1,5 +1,7 @@
 {
     "project":"mysite",
+    "editUrlLabel": "AEM Editor",
+    "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open",
     "plugins":[
         {
             "id":"google-assist",
@@ -9,7 +11,7 @@
             "passConfig":true,
             "passReferrer":true,
             "excludePaths":[],
-            "includePaths":["**"]
+            "includePaths":["**/demo"]
         }
     ]
 }
