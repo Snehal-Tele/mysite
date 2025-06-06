@@ -1,137 +1,73 @@
-/* search box */
-.search .search-box {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1ch;
+/* Container for the search input and button */
+.search.block .search-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 10px;
 }
-
-.search .search-box input {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0.5em;
-  border-radius: 4px;
-  border: 1px solid var(--dark-color);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-size: var(--body-font-size-s);
-  transition: border-color 0.2s;
+ 
+/* Updated input style */
+.search.block .input {
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+  font-size: 16px;
+  min-width: 200px;
 }
-
-.search .search-box input:hover {
-  border: 1px solid var(--text-color);
+ 
+.search.block .input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+              -13px -13px 100px #ffffff;
 }
-
-/* search results */
-.search ul.search-results {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  gap: 24px;
-  padding-left: 0;
-  list-style: none;
-}
-
-.search ul.search-results > li {
-  border: 1px solid #dadada;
-}
-
-.search ul.search-results > li > a {
-  display: block;
-  height: 100%;
-  background-color: transparent;
-  color: currentcolor;
+ 
+/* Style for the search button */
+.search.block button {
+  padding: 10px 16px;
+  font-size: 18px;
   cursor: pointer;
-}
-
-.search ul.search-results > li > a:hover,
-.search ul.search-results > li > a:focus {
-  text-decoration: none;
-}
-
-.search ul.search-results > li .search-result-title,
-.search ul.search-results > li p {
-  padding: 0 16px;
-}
-
-.search ul.search-results > li .search-result-title {
-  font-size: var(--body-font-size-m);
-  font-weight: normal;
-}
-
-.search ul.search-results > li .search-result-title a {
-  color: currentcolor;
-  text-decoration: none;
-}
-
-.search ul.search-results > li p {
-  font-size: var(--body-font-size-s);
-}
-
-.search ul.search-results > li .search-result-image {
-  aspect-ratio: 4 / 3;
-}
-
-.search ul.search-results > li picture img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* no results */
-.search ul.search-results.no-results {
-  display: block;
-  margin-left: 34px;
-}
-
-.search ul.search-results.no-results > li {
   border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 4px;
 }
-
-/* minimal variant */
-.search.minimal ul.search-results {
-  display: block;
-  padding-left: 34px;
+ 
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+  .search.block .search-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+ 
+  .search.block .input,
+  .search.block button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
 }
-
-.search.minimal ul.search-results > li {
-  position: relative;
+.input {
   border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
 }
-
-.search.minimal ul.search-results > li .search-result-title,
-.search.minimal ul.search-results > li p {
-  padding: unset;
+ 
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+              -13px -13px 100px #ffffff;
 }
-
-.search.minimal ul.search-results > li .search-result-title a {
-  color: var(--link-color);
-}
-
-/* stylelint-disable no-descending-specificity */
-.search.minimal ul.search-results > li > a {
-  background-color: unset;
-}
-
-.search.minimal ul.search-results > li > a:hover a,
-.search.minimal ul.search-results > li > a:focus a {
-  text-decoration: underline;
-  color: var(--link-hover-color);
-}
-
-.search.minimal ul.search-results > li .search-result-image {
-  position: absolute;
-  top: 2px;
-  left: -34px;
-}
-
-.search.minimal ul.search-results .search-result-title + p {
-  margin-top: 0.25em;
-}
-
-.search.minimal ul.search-results > li picture img {
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-}
+ 
+ 
