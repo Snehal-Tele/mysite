@@ -16,6 +16,8 @@
             "title":"Library",
             "environments":["edit","source"],
             "url":"/tools/sidekick/lirary.html",
+            "passConfig":true,
+            "passReferrer":true,
             "includePaths":["**.docs**"]
         }
     ]
