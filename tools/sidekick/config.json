@@ -14,7 +14,7 @@
         {
             "id":"library",
             "title":"Library",
-            "environments":["edit","source"],
+            "environments":["edit","source","preview"],
             "url":"/tools/sidekick/lirary.html",
             "passConfig":true,
             "passReferrer":true,
