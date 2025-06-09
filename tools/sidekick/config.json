@@ -10,6 +10,13 @@
             "passReferrer":true,
             "excludePaths":[],
             "includePaths":["**.docs**"]
+        },
+        {
+            "id":"library",
+            "title":"Library",
+            "environments":["edit","source"],
+            "url":"/tools/sidekick/lirary.html",
+            "includePaths":["**.docs**"]
         }
     ]
     
