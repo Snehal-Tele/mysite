@@ -1,10 +1,24 @@
-.imagebanner-block {
-    position: relative;
+/* Prevent horizontal scroll on the entire page */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+  }
+  .image-banner-wrapper{
+    margin: 0;
+    padding: 0;
+  }
+  /* Main block styling */
+  .imagebanner-block {
+    position: absolute;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    box-sizing: border-box;
   }
   
+  /* Image container */
   .imagebanner-image {
     position: absolute;
     top: 0;
@@ -12,14 +26,23 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(70%); /* Adjust percentage as needed */
+    
+      
   }
   
+  /* Image styling */
   .imagebanner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
   
+  /* Overlay content */
   .imagebanner-overlay {
     position: absolute;
     top: 50%;
@@ -29,17 +52,22 @@
     text-align: center;
     color: white;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.4);
+    
     border-radius: 8px;
+    max-width: 90vw;
+    box-sizing: border-box;
   }
   
+  /* Title and subtitle */
   .imagebanner-title {
     font-size: 3rem;
     margin: 0;
+    word-wrap: break-word;
   }
   
   .imagebanner-subtitle {
     font-size: 1.5rem;
     margin-top: 0.5rem;
+    word-wrap: break-word;
   }
   
