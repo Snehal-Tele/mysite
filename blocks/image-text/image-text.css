@@ -1,0 +1,52 @@
+.image-text-block {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+   
+    max-width: 1200px;
+  
+  }
+  
+  /* Title styling */
+  .image-text-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    
+    text-align: left;
+  }
+  
+  /* Content and image columns */
+  .image-text-content,
+  .image-text-image {
+    width: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Image styling */
+  .image-text-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  /* Layout for second row: text left, image right */
+  .image-text-block > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    flex-direction: row;
+  }
+  
+  /* Text content styling */
+  .image-text-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 0;
+  }
+  
+ 
