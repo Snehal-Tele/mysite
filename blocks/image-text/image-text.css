@@ -1,47 +1,30 @@
 .image-text-block {
-    display: flex;
-    flex-direction: column;
     font-family: 'Arial', sans-serif;
-   
     max-width: 1200px;
-  
+    margin: auto;
+    padding: 2rem;
   }
   
-  /* Title styling */
+  .image-text-block table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
   .image-text-title {
     font-size: 2.5rem;
     font-weight: 300;
     font-style: italic;
-    
     text-align: left;
+    padding-bottom: 1rem;
   }
   
-  /* Content and image columns */
-  .image-text-content,
-  .image-text-image {
+  .image-text-content {
     width: 50%;
     padding: 1rem;
+    vertical-align: top;
     box-sizing: border-box;
   }
   
-  /* Image styling */
-  .image-text-picture img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
-  
-  /* Layout for second row: text left, image right */
-  .image-text-block > div:nth-child(2) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    flex-direction: row;
-  }
-  
-  /* Text content styling */
   .image-text-content p {
     font-size: 1rem;
     line-height: 1.6;
@@ -49,4 +32,54 @@
     margin: 0;
   }
   
- 
+  .image-text-image {
+    width: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .image-text-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  .image-text-link {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .image-text-link a {
+    font-weight: bold;
+    color: #444;
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .image-text-block table,
+    .image-text-block tr,
+    .image-text-block td {
+      display: block;
+      width: 100%;
+    }
+  
+    .image-text-image,
+    .image-text-content,
+    .image-text-link {
+      width: 100%;
+      padding: 1rem 0;
+    }
+  
+    .image-text-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .image-text-content p,
+    .image-text-link a {
+      text-align: center;
+    }
+  }
+  
