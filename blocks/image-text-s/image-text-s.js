@@ -22,9 +22,12 @@ export default function decorate(block) {
       firstParagraph.remove();
     }
   
-    row.appendChild(content);
+    // Append image first, then content (image on left, content on right)
     row.appendChild(image);
+    row.appendChild(content);
   
+    // Clear and append the new row
+    block.innerHTML = '';
     block.appendChild(row);
   }
   
