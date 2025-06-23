@@ -1,16 +1,13 @@
 /* Reset default margins and paddings */
- body {
+body {
     margin: 0 !important;
     padding: 0;
     background-color: #faeaea;
     width: 100%;
     font-family: "Raleway", sans-serif;
-    
 } 
 .banner-wrapper{
     width: 100%;
-    margin: 0 !important;
-    padding: 0;
     
 }
 
@@ -66,6 +63,4 @@
     border-radius: 0; /* Remove border-radius if you want edge-to-edge */
     margin: 0;
     padding: 0;
-    filter: grayscale(70%); /* Adjust percentage as needed */
 }
-
