@@ -1,0 +1,38 @@
+.s-banner-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(195, 188, 211);
+    padding: 0px;
+  }
+  
+  .s-banner-text {
+    flex: 1;
+    max-width: 50%;
+    margin-left: 30px;
+  }
+  
+  .s-banner-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .s-banner-description {
+    font-size: 1.2em;
+  }
+  
+  .s-banner-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: right;
+    margin: 0%;
+    padding: 0px;
+  }
+  
+  .s-banner-image picture,
+  .s-banner-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
