@@ -1,46 +1,126 @@
-.eds-testimonials-block {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 40px auto;
-  font-family: 'Segoe UI', sans-serif;
+/* s-testimonial.css */
+ 
+/* Overall block container */
+.s-testimonial-block {
+  display: flex; /* Arrange testimonials in a row */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Space between testimonial cards */
+  justify-content: center; /* Center testimonials if there's extra space */
+  padding: 40px 20px; /* Padding around the entire block */
+  background-color: #f8f8f8; /* Light background for the section */
+  font-family: Arial, sans-serif; /* Example font */
 }
 
-.eds-testimonial-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  width: 300px;
-  padding: 20px;
-  text-align: center;
+/* Individual Testimonial Item (each card) */
+.s-testimonial-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center; /* Center text within each card */
+  flex: 1; /* Allow cards to grow and shrink */
+  min-width: 280px; /* Minimum width for each card */
+  max-width: 350px; /* Maximum width for each card */
+  display: flex; /* Use flexbox for internal layout (image and content) */
+  flex-direction: column; /* Stack image and content vertically */
+  align-items: center; /* Center items horizontally within the card */
 }
 
-.eds-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* Image Wrapper */
+.s-testimonial-image-wrapper {
+  margin-bottom: 20px; /* Space between image and text */
 }
 
-.eds-message {
-  font-style: italic;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 10px;
+/* Profile Image Styling (to make it circular) */
+.s-testimonial-profile-img {
+  width: 100px; /* Set a fixed width for the image */
+  height: 100px; /* Set a fixed height for the image */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 3px solid #ddd; /* Optional: subtle border around the image */
 }
 
-.eds-name {
+/* Content Wrapper */
+.s-testimonial-content-wrapper {
+  width: 100%; /* Ensure content takes full width of the card */
+}
+
+/* Testimonial Message */
+.s-testimonial-message {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  position: relative; /* For quotes */
+  padding: 0 10px; /* Padding to prevent quotes from overlapping text */
+}
+
+/* Add quotation marks using pseudo-elements */
+.s-testimonial-message::before {
+  content: "\201C"; /* Left double quotation mark */
+  font-size: 3em;
+  color: #ccc;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+.s-testimonial-message::after {
+  content: "\201D"; /* Right double quotation mark */
+  font-size: 3em;
+  color: #ccc;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+
+/* Name */
+.s-testimonial-name {
+  font-size: 1.15em;
   font-weight: bold;
-  font-size: 16px;
-  color: #ff9c00;
+  color: #333;
+  margin-top: 10px; /* Space above the name */
+  margin-bottom: 5px;
 }
 
-.eds-role {
-  font-size: 14px;
+/* Designation */
+.s-testimonial-designation {
+  font-size: 0.9em;
   color: #777;
+  margin-bottom: 0;
+}
+
+/* Responsive Adjustments (optional, but good practice) */
+@media (max-width: 768px) {
+  .s-testimonial-item {
+      min-width: unset; /* Remove min-width on smaller screens */
+      width: 90%; /* Take up more width */
+  }
+}
+
+@media (max-width: 480px) {
+  .s-testimonial-block {
+      padding: 20px 10px;
+  }
+  .s-testimonial-item {
+      padding: 20px;
+  }
+  .s-testimonial-profile-img {
+      width: 80px;
+      height: 80px;
+  }
+  .s-testimonial-message {
+      font-size: 1em;
+  }
+  .s-testimonial-name {
+      font-size: 1.05em;
+  }
+  .s-testimonial-designation {
+      font-size: 0.85em;
+  }
 }

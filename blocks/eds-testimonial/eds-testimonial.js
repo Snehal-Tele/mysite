@@ -1,35 +1,46 @@
 export default function decorate(block) {
-  block.classList.add('eds-testimonials-block');
+  // Add a base class to the block for overall styling
+  block.classList.add('s-testimonial-block');
 
-  const rows = Array.from(block.querySelectorAll('tr'));
+  // Get all rows in the block (which are the table rows)
+  const rows = Array.from(block.children);
 
-  rows.forEach((row) => {
-    const columns = Array.from(row.querySelectorAll('td'));
-    if (columns.length === 2) {
-      const imageCol = columns[0];
-      const textCol = columns[1];
+  rows.forEach((row, rowIndex) => {
+      row.classList.add('s-testimonial-item'); // Add class for each testimonial item
 
-      const img = imageCol.querySelector('img');
-      const lines = textCol.innerText.trim().split('\n');
+      // Get all columns in the current row
+      const cols = Array.from(row.children);
 
-      if (img && lines.length >= 3) {
-        const card = document.createElement('div');
-        card.classList.add('eds-testimonial-card');
+      cols.forEach((col, colIndex) => {
+          if (colIndex === 0) { // First column: Image
+              col.classList.add('s-testimonial-image-wrapper');
+              // Find the picture element and add a class for styling
+              const pic = col.querySelector('picture');
+              if (pic) {
+                  pic.classList.add('s-testimonial-image');
+              }
+              // Also, if there's an img directly inside the picture, give it a class
+              const img = col.querySelector('picture img');
+              if (img) {
+                  img.classList.add('s-testimonial-profile-img');
+              }
+          } else if (colIndex === 1) { // Second column: Text Content
+              col.classList.add('s-testimonial-content-wrapper');
 
-        img.classList.add('eds-img');
+              // Get all paragraphs within the content column
+              const paragraphs = Array.from(col.children);
 
-        card.innerHTML = `
-          <img src="${img.src}" alt="${img.alt}" class="eds-img">
-          <p class="eds-message">"${lines[0]}"</p>
-          <p class="eds-name">${lines[1]}</p>
-          <p class="eds-role">${lines[2]}</p>
-        `;
-
-        block.appendChild(card);
-      }
-    }
+              // Assuming the order: message, name, designation
+              if (paragraphs[0]) {
+                  paragraphs[0].classList.add('s-testimonial-message');
+              }
+              if (paragraphs[1]) {
+                  paragraphs[1].classList.add('s-testimonial-name');
+              }
+              if (paragraphs[2]) {
+                  paragraphs[2].classList.add('s-testimonial-designation');
+              }
+          }
+      });
   });
-
-  // Remove original table
-  block.querySelector('table')?.remove();
 }
