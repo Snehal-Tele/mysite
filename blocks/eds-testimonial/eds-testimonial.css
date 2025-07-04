@@ -7,7 +7,7 @@
   gap: 20px; /* Space between testimonial cards */
   justify-content: center; /* Center testimonials if there's extra space */
   padding: 40px 20px; /* Padding around the entire block */
-  background-color: #f8f8f8; /* Light background for the section */
+  background-color: #fff; /* Light background for the section */
   font-family: Arial, sans-serif; /* Example font */
 }
 
@@ -15,8 +15,9 @@
 .s-testimonial-item {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
   padding: 25px;
+  border: #bcbcbcc5 solid 0.1px;
   text-align: center; /* Center text within each card */
   flex: 1; /* Allow cards to grow and shrink */
   min-width: 280px; /* Minimum width for each card */
@@ -48,7 +49,7 @@
 /* Testimonial Message */
 .s-testimonial-message {
   font-size: 1.1em;
-  color: #555;
+  color: rgb(113, 111, 108);
   line-height: 1.6;
   margin-bottom: 15px;
   position: relative; /* For quotes */
