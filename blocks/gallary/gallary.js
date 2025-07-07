@@ -1,7 +1,7 @@
 export default function decorate(block) {
   block.classList.add('image-carousel-block');
 
-  const images = Array.from(block.querySelectorAll('picture')).map(pic => {
+  const originalImages = Array.from(block.querySelectorAll('picture')).map(pic => {
     const img = pic.querySelector('img');
     return img ? img.cloneNode(true) : null;
   }).filter(Boolean);
@@ -9,21 +9,26 @@ export default function decorate(block) {
   const track = document.createElement('div');
   track.className = 'image-carousel-track';
 
-  images.forEach(img => track.appendChild(img));
+  // Duplicate images to fill the carousel and simulate circular flow
+  const totalCopies = 3; // Adjust for smoother looping
+  for (let i = 0; i < totalCopies; i++) {
+    originalImages.forEach(img => {
+      const clone = img.cloneNode(true);
+      track.appendChild(clone);
+    });
+  }
 
   block.innerHTML = '';
   block.appendChild(track);
 
-  let currentIndex = 0;
+  let currentIndex = originalImages.length; // Start from middle set
+  const allImages = track.querySelectorAll('img');
 
   function updateActive(index) {
-    const all = track.querySelectorAll('img');
-    all.forEach(img => img.classList.remove('active'));
-
-    const activeImg = all[index];
+    allImages.forEach(img => img.classList.remove('active'));
+    const activeImg = allImages[index];
     activeImg.classList.add('active');
 
-    // Center the active image
     const blockRect = block.getBoundingClientRect();
     const trackRect = track.getBoundingClientRect();
     const activeRect = activeImg.getBoundingClientRect();
@@ -33,21 +38,36 @@ export default function decorate(block) {
   }
 
   function rotateCarousel(direction) {
-    const all = track.querySelectorAll('img');
-    currentIndex = (currentIndex + direction + all.length) % all.length;
-    updateActive(currentIndex);
+    currentIndex += direction;
+
+    // Reset index if out of bounds to simulate infinite loop
+    if (currentIndex >= allImages.length - originalImages.length) {
+      currentIndex = originalImages.length;
+      track.style.transition = 'none';
+      updateActive(currentIndex);
+      requestAnimationFrame(() => {
+        track.style.transition = 'transform 0.5s ease';
+      });
+    } else if (currentIndex < originalImages.length) {
+      currentIndex = allImages.length - originalImages.length - 1;
+      track.style.transition = 'none';
+      updateActive(currentIndex);
+      requestAnimationFrame(() => {
+        track.style.transition = 'transform 0.5s ease';
+      });
+    } else {
+      updateActive(currentIndex);
+    }
   }
 
-  track.querySelectorAll('img').forEach((img, i) => {
+  allImages.forEach((img, i) => {
     img.addEventListener('click', () => {
       currentIndex = i;
       updateActive(currentIndex);
     });
   });
 
-  // Auto-rotate every 3 seconds
-  setInterval(() => rotateCarousel(1), 3000);
+  setInterval(() => rotateCarousel(1), 5000);
 
-  // Initial centering
   updateActive(currentIndex);
 }
