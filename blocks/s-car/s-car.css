@@ -12,9 +12,12 @@
     transition: transform 0.5s ease;
     gap: 20px;
     will-change: transform;
+    width: max-content; /* Ensures track grows with content */
   }
   
   .carousel-item {
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 150px; /* Fixed width for all items */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,18 +28,9 @@
   }
   
   .carousel-item img {
-    width: 150px;
+    width: 100%; /* Fill the fixed width */
     height: auto;
     border-radius: 8px;
-  }
-  
-  .carousel-caption {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-    display: none;
-    text-align: center;
-    max-width: 300px;
   }
   
   .carousel-item.active {
@@ -46,10 +40,25 @@
   }
   
   .carousel-item.active img {
-    width: 300px;
+    width: 100%; /* Maintain fixed size */
+  }
+  
+  .carousel-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.1s ease, transform 0.5s ease;
+    display: block;
+    pointer-events: none;
   }
   
   .carousel-item.active .carousel-caption {
-    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
   
