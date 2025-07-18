@@ -121,8 +121,7 @@ export default async function decorate(block) {
     slideNavButtons.classList.add('carousel-navigation-buttons');
     slideNavButtons.innerHTML = `
       <button type="button" class= "slide-prev" aria-label="${placeholders.previousSlide || 'Previous Slide'}"></button>
-      <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
-    `;
+      <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>`;
 
     container.append(slideNavButtons);
   }
