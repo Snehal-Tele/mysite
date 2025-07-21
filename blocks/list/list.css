@@ -7,7 +7,7 @@
 
 .list-columns-block .list-column {
   flex: 1;
-  min-width: 200px;
+  min-width: 150px;
 }
 
 .list-columns-block .list-column ol,
