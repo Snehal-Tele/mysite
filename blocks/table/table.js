@@ -6,6 +6,15 @@ export default async function decorate(block) {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
   
+      // Log the data for debugging
+      console.log('Fetched JSON:', data);
+  
+      // Check if data is an array and has at least one item
+      if (!Array.isArray(data) || data.length === 0) {
+        block.textContent = 'No data available to display.';
+        return;
+      }
+  
       // Create table
       const table = document.createElement('table');
       table.className = 'json-table';
