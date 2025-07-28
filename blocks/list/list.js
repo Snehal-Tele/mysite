@@ -6,7 +6,7 @@ export default function decorate(block) {
   rows.forEach((row, rowIndex) => {
     const columns = Array.from(row.children);
     columns.forEach((col, colIndex) => {
-      col.classList.add('list-column');
+    col.classList.add('list-column');
     });
   });
 }

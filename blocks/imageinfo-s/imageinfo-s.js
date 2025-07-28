@@ -1,22 +1,20 @@
 export default function decorate(block) {
-    block.classList.add('imageinfo-s-block');
-
-    const rows = Array.from(block.children);
-
-    rows.forEach((row, rowIndex) => {
-        const columns = Array.from(row.children);
-        columns.forEach((col, colIndex) => {
-            if (rowIndex === 0) {
-                col.classList.add('imageinfo-s-title');
-                const idText = col.textContent.trim().toLowerCase().split(/\s+/)[0].replace(/[^\w-]/g, '');
-                if (idText && !block.id) {
-                    block.id = idText;
-                }
-            } else if (rowIndex === 1) {
-                if (colIndex === 0) {
-                    col.classList.add('imageinfo-s-img');
-                    const img = col.querySelector('picture');
-                    if (img) {
+  block.classList.add('imageinfo-s-block');
+  const rows = Array.from(block.children);
+  rows.forEach((row, rowIndex) => {
+    const columns = Array.from(row.children);
+    columns.forEach((col, colIndex) => {
+        if (rowIndex === 0) {
+            col.classList.add('imageinfo-s-title');
+            const idText = col.textContent.trim().toLowerCase().split(/\s+/)[0].replace(/[^\w-]/g, '');
+            if (idText && !block.id) {
+                block.id = idText;
+            }
+        } else if (rowIndex === 1) {
+            if (colIndex === 0) {
+                col.classList.add('imageinfo-s-img');
+                const img = col.querySelector('picture');
+                if (img) {
                         img.classList.add("imagePicture");
                     }
                 } else if (colIndex === 1) {
