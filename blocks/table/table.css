@@ -7,17 +7,17 @@
   
   .json-table th,
   .json-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
     text-align: left;
   }
   
   .json-table th {
-    background-color: #f2f2f2;
+    background-color: #f4f4f4;
     font-weight: bold;
   }
   
   .json-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #fafafa;
   }
   

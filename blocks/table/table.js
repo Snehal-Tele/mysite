@@ -4,14 +4,12 @@ export default async function decorate(block) {
     try {
       const response = await fetch(jsonUrl);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const data = await response.json();
+      const json = await response.json();
   
-      // Log the data for debugging
-      console.log('Fetched JSON:', data);
-  
-      // Check if data is an array and has at least one item
+      // Check if the JSON is an array and has data
+      const data = Array.isArray(json.data) ? json.data : json;
       if (!Array.isArray(data) || data.length === 0) {
-        block.textContent = 'No data available to display.';
+        block.textContent = 'No data available.';
         return;
       }
   
