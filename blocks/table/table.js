@@ -2,7 +2,7 @@ export default async function decorate(block) {
     const jsonUrl = 'https://main--mysite--snehal-tele.aem.live/countries.json';
   
     try {
-      const response = await fetch(jsonUrl);
+      const response = await fetch('https://main--mysite--snehal-tele.aem.live/countries.json');
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const json = await response.json();
   
