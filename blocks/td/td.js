@@ -1,8 +1,6 @@
 export default function decorate(block) {
     block.classList.add('table-block');
-  
     const rows = Array.from(block.children);
-  
     rows.forEach((row, rowIndex) => {
       row.classList.add('table-row');
       const columns = Array.from(row.children);

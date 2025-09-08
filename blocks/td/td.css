@@ -2,7 +2,7 @@
     display: table;
     width: 100%;
     border-collapse: collapse;
-    font-family: "Segoe UI", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 1rem 0;
   }
   
@@ -13,12 +13,14 @@
   .table-block .table-cell {
     display: table-cell;
     padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     vertical-align: middle;
+    text-align: center;
   }
   
   .table-block .table-header {
     font-weight: bold;
-    background-color: #f4f4f4;
+    background-color: #594d7f;
+    color: #ffffff;
   }
   
