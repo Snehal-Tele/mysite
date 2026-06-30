@@ -30,7 +30,7 @@ export default function decorate(block) {
         if (match) {
           const baseUrl = 'https://main--mysite--snehal-tele.aem.live';
           window.location.href = `${baseUrl}${match.path}`;
-        } else {
+        } else {z
           alert('No matching page found.');
         }
       } catch (err) {

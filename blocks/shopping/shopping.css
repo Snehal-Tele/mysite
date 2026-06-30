@@ -1,0 +1,81 @@
+.shopping-tools {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  
+  .shopping-tools-heading {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 32px;
+    color: var(--text-color, #1a1a1a);
+  }
+  
+  .shopping-tools-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .shopping-tools-item {
+    flex: 1;
+    position: relative;
+    border-right: 1px solid #d0d0d0;
+  }
+  
+  .shopping-tools-item:last-child {
+    border-right: none;
+  }
+  
+  .shopping-tools-item-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px 16px;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .shopping-tools-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .shopping-tools-icon img,
+  .shopping-tools-icon picture {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .shopping-tools-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+  
+  /* Stack on small screens */
+  @media (max-width: 600px) {
+    .shopping-tools-list {
+      flex-direction: column;
+    }
+  
+    .shopping-tools-item {
+      border-right: none;
+      border-bottom: 1px solid #d0d0d0;
+    }
+  
+    .shopping-tools-item:last-child {
+      border-bottom: none;
+    }
+  }
