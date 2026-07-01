@@ -72,7 +72,8 @@
     font-size: 32px;
     font-weight: 400;
     line-height: 40px;
-    font-family: tcomMed, HelveticaNeueMedium, Helvetica Neue Medium, Arial, sans-serif;
+    font-family: tcomMed;
+    font-style: normal;
   }
   
   .cards-description {
